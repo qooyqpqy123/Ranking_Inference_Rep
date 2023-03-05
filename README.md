@@ -5,59 +5,30 @@
 ## Data  <br />
 
 ### 1.1. Data Description <br />
-FRED-MD is a large macroeconomic database designed for the empirical analysis of “big data.” The datasets of monthly and quarterly observations mimic the coverage of datasets already used in the literature, but they add three appealing features. They are updated in real-time through the FRED database. They are publicly accessible, facilitating the replication of empirical work.  <br />
+4.1 million continuous ratings of 100 jokes from 73421 users: collected between Apirl 1999-May 2003. <br />
 ### 1.2. Data Availability <br />
- The original Dataset can be found in https://research.stlouisfed.org/econ/mccracken/fred-databases/. <br />
- In our .zip file, the original Dataset is provided in the folder ``Code_Reproduction/Real_Data/Pre_process/current.csv." <br />
- The description of the data is provided in "Code_Reproduction/Real_Data/Pre_process/Description_of_Variables.pdf."  <br /> This description describes the meaning of all columns of this Dataset.
+ The original Dataset can be found in https://goldberg.berkeley.edu/jester-data/. <br />
+ In our .zip file, the original Dataset is provided in the folder ``/Ranking_Inference_Reproduction/Real_Data/jester_1.csv" and `/Ranking_Inference_Reproduction/Real_Data/jester_2.csv" <br />
+Description:
+Data files contain anonymous ratings data from 73,421 users. <br />
+Ratings are real values ranging from -10.00 to +10.00 (the value "99" corresponds to "null" = "not rated").<br />
+One row per user <br />
+The first column gives the number of jokes rated by that user. The next 100 columns give the ratings for jokes 01 - 100. <br />
 
 ## Codes Description and Implementation Details:
- There are four folders under the folder: ``Code_Reproduction/Real_Data."  <br /> 1. Pre_process, <br />2. Prediction_Table_3 <br />  3. PCR_Adequate_Table4, <br /> 4. Sparse_Adequate_Table4. <br />
-### Folder `Code_Reproduction/Real_Data/Pre_process':
- It contains the codes for real data pre-processing. The document `current.csv' in that folder is downloaded from the website mentioned above. <br />
+ There are two folders under the folder: ``/Ranking_Inference_Reproduction/Real_Data/"  <br /> 1. Table 4, <br />2. Table 5-6 <br /> 
+### Folder `/Ranking_Inference_Reproduction/Real_Data/':
+ It contains the codes for reproduce results in Table 4 and Table 5-6. The document `jester_1.csv and jester_2.csv' in that folder is downloaded from the website mentioned above. <br />
  
- The code **realdata_read.R** contains the codes for pre-processing the data. The line 4 in "realdata_read.R", we have a variable called: "choose_time". If one lets choose_time=1 and run the codes, the output is the processed Dataset **realdata_115_126.csv**. If one lets choose_time=2, and run the codes, the output is the processed Dataset **realdata_189_126.csv**.<br />
+ The code **Table4.R** contains the codes for reproducing Table 4 of the real data analysis. The setting of the paper is given in line 96, one only need to run this code file directly. The outputs are given in line 133-134 and lines 265-271. We also mark their corresponding reproduced columns in Table 4.<br />
  
- **Run time** of **realdata_read.R** is less than 3 min.
+  **Run time** of **Table4.R** is less than 10 min.
  
- Finally, for document "Description_of_Variables.pdf" inside that document, it contains a detailed description of all variables in the original dataset "current.csv". <br />
+  The code **Table5-6.R** contains the codes for reproducing Tables 5 and 6 of the real data analysis. The setting of the paper is given in line 101, one only need to set up these parameters according to the different settings of Table 5 and 6 in our paper and run this code file directly. The outputs are given in lines 269-279. We also mark their corresponding reproduced columns in Table 5-6.<br />
  
-
-### Folder `Code_Reproduction/Real_Data/Prediction_Table3':
-This folder contains the codes for reproducing the prediction results of Table 3 in our paper. <br />
-
-*For code file **realdata_prediction_115.R**, it first reads the data "realdata_115_126.csv" in that folder. On line 54 of this file, there is a variable "j ."If we set j=49 and run the codes, we reproduce the line "HOUSTNE" line during "08.2010-02.2020" in Table 3. If we set j=81 and run the codes, we reproduce the line "GS5" line during "08.2010-02.2020" in Table 3. <br />
-
-*For code file **realdata_prediction_189.R**, it first reads the data "realdata_189_126.csv" in that folder. On the line 54 of this file, there is a variable "j". If we set j=49, and run the codes, we reproduce the line "HOUSTNE" line during "02.1992-10.2007" in Table 3. If we set j=81 and run the codes, we reproduce the line "GS5" line during "02.1992-10.2007" in Table 3. <br />
-
-For both .R files, the output is printed in lines 149-161 and 189 for different methods: Lasso (sparse linear regression), PCR (latent factor regression), Ridge (Ridge regression), El-Net (Elastic Net), RF (Random Forest), and FarmSelect (Factor adjusted Lasso), respectively.
-
- **Run time** of **realdata_prediction_115.R** and **realdata_prediction_189.R** are less than 10 min.
-
-### Folder `Code_Reproduction/Real_Data/PCR_Adequate_Table4':
-This folder contains the codes for reproducing the hypothesis testing results of column "LA_factor" of Table 4 in our paper. <br />
-
-*For code file **Real_data_PCR_115.R**, it first reads the data "realdata_115_126.csv" in that folder. On line 17 of this file, there is a variable "j." If we set j=49 and run the codes, we reproduce the line "HOUSTNE", column "LA_factor," during "08.2010-02.2020" in Table 4. If we set j=81 and run the codes, we reproduce the line "GS5" line, column "LA_factor", during "08.2010-02.2020" in Table 4. <br />
-
-
-*For code file **Real_data_PCR_189.R**, it first reads the data "realdata_189_126.csv" in that folder. Line 17 of this file has a variable "j". If we set j=49, and run the codes, we reproduce the line "HOUSTNE", column "LA_factor," during "02.1992-10.2007" in Table 4. If we set j=81 and run the codes, we reproduce the line "GS5" line, column "LA_factor", during "02.1992-10.2007" in Table 4. <br />
-
-For both .R files, the outputs are p-values of the test on whether PCR is adequate.
-
-**Run time** of **Real_data_PCR_115.R** and **Real_data_PCR_189.R** are less than 10 min.
-
-### Folder `Code_Reproduction/Real_Data/Sparse_Adequate_Table4':
-This folder contains the codes for reproducing the hypothesis testing results of column "SP_Linear" of Table 4 in our paper.
-
-*For code file **Real_data_Sparse_115.R**, it first reads the data "realdata_115_126.csv" in that folder. On the line 94 of this file, there is a variable "j". If we set j=49, and run the codes, we reproduce the line "HOUSTNE", column "SP_Linear," during "08.2010-02.2020" in Table 4. If we set j=81 and run the codes, we reproduce the line "GS5" line, column "SP_Linear", during "08.2010-02.2020" in Table 4. <br />
-
-
-*For code file **Real_data_Sparse_189.R**, it first reads the data "realdata_189_126.csv" in that folder. On line 94 of this file, there is a variable "j". If we set j=49, and run the codes, we reproduce the line "HOUSTNE", column "SP_Linear," during "02.1992-10.2007" in Table 4. If we set j=81 and run the codes, we reproduce the line "GS5" line, column "SP_Linear", during "02.1992-10.2007" in Table 4. <br />
+ **Run time** of **Table5-6.R** is less than 10 min.
  
-For both .R files, the outputs are p-values of the test on whether Sparse Regression is adequate.
-
-**Run time** of **Real_data_Sparse_115.R** and **Real_data_Sparse_189.R** are less than 10 min.
-
+ 
 # 2. **Simulation Studies** <br />
 
 ## Codes Description and Implementation Details:
