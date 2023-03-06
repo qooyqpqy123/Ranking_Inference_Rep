@@ -13,7 +13,7 @@
 Description:
 Data files contain anonymous ratings data from 73,421 users. <br />
 Ratings are real values ranging from -10.00 to +10.00 (the value "99" corresponds to "null" = "not rated").<br />
-One row per user <br />
+One row per user. <br />
 The first column gives the number of jokes rated by that user. The next 100 columns give the ratings for jokes 01 - 100. <br />
 
 ## Codes Description and Implementation Details:
