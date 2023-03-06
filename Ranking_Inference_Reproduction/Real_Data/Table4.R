@@ -258,7 +258,7 @@ for (i in c(1:length(w.idx))){ #For any index in top-15, compute its confidence 
   #write.csv(R.right.C_vec,"R.right.C_vec.csv")
   R.left.N_vec<-c(R.left.N_vec,R.left.N) 
   #write.csv(R.left.N_vec,"R.left.N_vec.csv")                                                                ## [R.left.N,R.right.N] is Chao Gao CI       
-  R.right.N_vec<-c(R.right.N_vec,R.right.N) 
+  R.right.N_vec<-c(R.right.N_vec,R.right.N)} 
   #write.csv(R.right.N_vec,"R.right.N_vec.csv")}
   #####################################################################################
   
