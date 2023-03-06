@@ -8,7 +8,8 @@
 4.1 million continuous ratings of 100 jokes from 73421 users: collected between Apirl 1999-May 2003. <br />
 ### 1.2. Data Availability <br />
  The original Dataset and detailed description can be found in https://goldberg.berkeley.edu/jester-data/. <br />
- In our .zip file, the original Dataset is provided in the folder ``/Ranking_Inference_Reproduction/Real_Data/jester_1.csv" and `/Ranking_Inference_Reproduction/Real_Data/jester_2.csv" <br />
+ In our .zip file, the original Dataset is provided in the folder ``/Ranking_Inference_Reproduction/Real_Data/jester_1.csv" and `/Ranking_Inference_Reproduction/Real_Data/jester_2.csv". <br />
+ 
 Description:
 Data files contain anonymous ratings data from 73,421 users. <br />
 Ratings are real values ranging from -10.00 to +10.00 (the value "99" corresponds to "null" = "not rated").<br />
