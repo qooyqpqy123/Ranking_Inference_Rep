@@ -16,7 +16,7 @@ One row per user <br />
 The first column gives the number of jokes rated by that user. The next 100 columns give the ratings for jokes 01 - 100. <br />
 
 ## Codes Description and Implementation Details:
- There are two folders under the folder: ``/Ranking_Inference_Reproduction/Real_Data/"  <br /> 1. Table 4, <br />2. Table 5-6 <br /> 
+ There are two files under the folder: ``/Ranking_Inference_Reproduction/Real_Data/"  <br /> 1. Table 4, <br />2. Table 5-6 <br /> 
 ### Folder `/Ranking_Inference_Reproduction/Real_Data/':
  It contains the codes for reproduce results in Table 4 and Table 5-6. The document `jester_1.csv and jester_2.csv' in that folder is downloaded from the website mentioned above. <br />
  
