@@ -37,25 +37,25 @@ The first column gives the number of jokes rated by that user. The next 100 colu
 This is the code file Figure1-2.R contains codes for reproducing the methodology of Figures 1 and 2. <br />
 The setting of the code is given in line 34. Here we let L be fixed and p vary. (Following the caption of Figure 2, we can also let p fixed and let L vary). The output of this simulation is given in lines 66-67, where the l_2 and l_{\infty} errors are recorded for 500 times. The mean value and standard errors can be computed via these outputs directly.<br />
 
-**Run time** of **pcr_adequate.R** for any given setting described above is around xxx hrs.
+**Run time** of **pcr_adequate.R** for any given setting described above is around 8 hrs.
 
 ### `/Ranking_Inference_Reproduction/Simulation/Figure_3.R':
 This is the code file Figure_3.R contains codes for reproducing the methodology of right panel of Figure 3. <br />
 The setting of the code is given in lines 91-92. Here we follow the setting of figure 3 in the codes (n=60,p=0.05,L=80). The output of this simulation is given in line 127, where the empirical p-values are recorded. With these data, one is able to reproduce the right_panel of figure 3.<br />
 
-**Run time** of **pcr_adequate.R** for any given setting described above is around xxx hrs.
+**Run time** of **pcr_adequate.R** for any given setting described above is greater than 24 hrs.
 
 ### `/Ranking_Inference_Reproduction/Simulation/Figure_7.R':
 
 This is the code file Figure_7.R contains codes for reproducing the methodology of right panel of Figure 7 in appendix (also left panel of Figure 3). <br />
 The setting of the code is given in lines 49 and 52. Here we follow the setting of figure 7 by letting L=10 and p=(0.008,0.015,0.03) respectively. One is also able to set $L$ by different numbers (e.g. 5, 10, 20 suggested in figure 7). The output of this simulation is given in line 79, where we record the distribution of the MLE. With these data, one is able to reproduce the right_panel of figure 7 and left panel of Figure 3.<br />
 
-**Run time** of **inference.R** for any given setting described above is around xxx hrs.
+**Run time** of **Figure_7.R** for any given setting described above is around 2 hrs.
 
 ### Folder `/Ranking_Inference_Reproduction/Simulation/Table1-3.R':
 
 This is the code file Table1-3.R contains codes for reproducing the methodology of Tables 1-3. <br />
 The setting of the code is given in lines 144. The output of this simulation is given in lines 435-481, where we specify the meanings of all outputs and their corresponding position in Tables 1-3.<br />
 
-**Run time** of **Table1-3.R** for any given setting described above is xxx hrs.
+**Run time** of **Table1-3.R** for any given setting described above is around 6 hrs.
 
