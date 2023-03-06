@@ -48,7 +48,7 @@ The setting of the code is given in lines 91-92. Here we follow the setting of f
 
 ### File`/Ranking_Inference_Reproduction/Simulation/Figure_7.R':
 
-This is the code file Figure_7.R contains codes for reproducing the methodology of right panel of Figure 7 in appendix (also left panel of Figure 3). <br />
+This is the code file Figure_7.R contains codes for reproducing the methodology of Figure 7 in appendix (also left panel of Figure 3). <br />
 The setting of the code is given in lines 49 and 52. Here we follow the setting of figure 7 by letting L=10 and p=(0.008,0.015,0.03) respectively. One is also able to set $L$ by different numbers (e.g. 5, 10, 20 suggested in figure 7). The output of this simulation is given in line 79, where we record the distribution of the MLE. With these data, one is able to reproduce the right_panel of figure 7 and left panel of Figure 3.<br />
 
 **Run time** of **Figure_7.R** for any given setting described above is around 2 hrs.
