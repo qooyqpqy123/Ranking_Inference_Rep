@@ -20,11 +20,11 @@ The first column gives the number of jokes rated by that user. The next 100 colu
 ### Folder `/Ranking_Inference_Reproduction/Real_Data/':
  It contains the codes for reproduce results in Table 4 and Table 5-6. The document `jester_1.csv and jester_2.csv' in that folder is downloaded from the website mentioned above. <br />
  
- The code **Table4.R** contains the codes for reproducing Table 4 of the real data analysis. The setting of the paper is given in line 96, one only need to run this code file directly. The outputs are given in line 133-134 and lines 265-271. We also mark their corresponding reproduced columns in Table 4.<br />
+ The code file **Table4.R** contains the codes for reproducing Table 4 of the real data analysis. The setting is given in line 96 (corrsponds to setting of Table 4), one only needs to run this code file directly. The outputs are given in line 133-134 and lines 265-271. We also mark their corresponding reproduced columns in Table 4.<br />
  
   **Run time** of **Table4.R** is less than 10 min.
  
-  The code **Table5-6.R** contains the codes for reproducing Tables 5 and 6 of the real data analysis. The setting of the paper is given in line 101, one only need to set up these parameters according to the different settings of Table 5 and 6 in our paper and run this code file directly. The outputs are given in lines 269-279. We also mark their corresponding reproduced columns in Table 5-6.<br />
+  The code file **Table5-6.R** contains the codes for reproducing Tables 5 and 6 of the real data analysis. The setting of is given in line 101, one only need to set up these parameters according to the different settings of Table 5 and 6 in our paper and run this code file directly. The outputs are given in lines 269-279. We also mark their corresponding reproduced columns in Table 5-6.<br />
  
  **Run time** of **Table5-6.R** is less than 10 min.
  
@@ -33,50 +33,29 @@ The first column gives the number of jokes rated by that user. The next 100 colu
 
 ## Codes Description and Implementation Details:
 
-### Folder `Code_Reproduction/simulation/Consitency_Figure1/':
-There are three sub-folders inside this folder, namely, Gaussian, Uniform, and Heavy-tail. <br />
+### File `/Ranking_Inference_Reproduction/Simulation/Figure1-2.R':
+This is the code file Figure1-2.R contains codes for reproducing the methodology of Figures 1 and 2. <br />
+The setting of the code is given in line 34. Here we let L be fixed and p vary. (Following the caption of Figure 2, we can also let p fixed and let L vary). The output of this simulation is given in lines 66-67, where the l_2 and l_{\infty} errors are recorded for 500 times. The mean value and standard errors can be computed via these outputs directly.<br />
 
-For folders Gaussian and Uniform, they contain codes **Gauss_consistency.R** and **Uniform_consistency.R**, respectively. By running these codes directly, we reproduce the methodology for generating results for Figure 1 (a) and (b). <br />
+**Run time** of **pcr_adequate.R** for any given setting described above is around xxx hrs.
 
-For folder Heavy-tail: it contains codes: **huber_estimation.R** and **T-consistency.R**. By running these codes directly, we reproduce the methodology for generating the red and blue lines of (c) of Figure 1.
+### `/Ranking_Inference_Reproduction/Simulation/Figure_3.R':
+This is the code file Figure_3.R contains codes for reproducing the methodology of right panel of Figure 3. <br />
+The setting of the code is given in lines 91-92. Here we follow the setting of figure 3 in the codes (n=60,p=0.05,L=80). The output of this simulation is given in line 127, where the empirical p-values are recorded. With these data, one is able to reproduce the right_panel of figure 3.<br />
 
-**Run time** of **Gauss_consistency.R**, **Uniform_consistency.R**, **huber_estimation.R** and **T-consistency.R** are around 5 hrs, respectively.
+**Run time** of **pcr_adequate.R** for any given setting described above is around xxx hrs.
 
-### Folder `Code_Reproduction/simulation/Simulation_Table1/':
-There is one file **pcr_adequate.R** under this folder. It reproduces the methodology of Table 1. <br /> 
-There are several parameters in this file that need to be pre-specified. They correspond to different simulation settings of the paper. <br /> 
+### `/Ranking_Inference_Reproduction/Simulation/Figure_7.R':
 
-1. First, on line 7, if we let the parameter "choose_dim=1", it outputs the results with dimension p=200. If we let the parameter "choose_dim=2", it outputs the results with dimension p=500.  <br /> 
+This is the code file Figure_7.R contains codes for reproducing the methodology of right panel of Figure 7 in appendix (also left panel of Figure 3). <br />
+The setting of the code is given in lines 49 and 52. Here we follow the setting of figure 7 by letting L=10 and p=(0.008,0.015,0.03) respectively. One is also able to set $L$ by different numbers (e.g. 5, 10, 20 suggested in figure 7). The output of this simulation is given in line 79, where we record the distribution of the MLE. With these data, one is able to reproduce the right_panel of figure 7 and left panel of Figure 3.<br />
 
-2. Second, on line 10, if we let the parameter "choose=1", it outputs the results under the setting where factors F and idiosyncratic components are generated via setting 1 in section 5.2 of this paper. If we let the parameter "choose=2",it outputs the results under the setting where factors F and idiosyncratic components are generated via setting 2 in section 5.2 of this paper. <br /> 
+**Run time** of **inference.R** for any given setting described above is around xxx hrs.
 
-3. Third, on line 16, if we let the parameter "choose_noise=1", it outputs the results when the noise is generated based on Gaussian distribution. If we let the parameter "choose_noise=2", it outputs the results under the setting where the noise follows a uniform distribution.  <br /> 
+### Folder `/Ranking_Inference_Reproduction/Simulation/Table1-3.R':
 
-**Run time** of **pcr_adequate.R** for any given setting described above is around 12 hrs.
+This is the code file Table1-3.R contains codes for reproducing the methodology of Tables 1-3. <br />
+The setting of the code is given in lines 144. The output of this simulation is given in lines 435-481, where we specify the meanings of all outputs and their corresponding position in Tables 1-3.<br />
 
-### Folder `Code_Reproduction/simulation/Simulation_Table2/':
+**Run time** of **Table1-3.R** for any given setting described above is xxx hrs.
 
-There is one file **inference.R** under this folder. It reproduces the methodology of Table 2. <br /> 
-There are several parameters in this file that need to be pre-specified. They correspond to different simulation settings of the paper. <br /> 
-
-1. First, on line 93, if we let the parameter "choose_p=1", it outputs the results with dimension p=250. If we let the parameter "choose_p=2", it outputs the results with dimension p=600.  <br /> 
-
-2. Second, on line 94, if we let the parameter "choose_noise=1", it outputs the results where the noise is generated based on Gaussian distribution. If we let the parameter "choose_noise=2", it outputs the results under the setting where the noise follows a uniform distribution. <br /> 
-
-3. Third, on line 95, if we let the parameter "choose_mix=1", it outputs the results under the setting where the covariates are generated, i.i.d. If we let the parameter "choose_mix=2",it outputs the results under the setting where the covariates are strong mixing. <br /> 
-
-**Run time** of **inference.R** for any given setting described above is around 5 hrs.
-
-### Folder `Code_Reproduction/simulation/Prediction_Section_B.1/':
-
-There are four files inside this folder. **Prediction_Table1.R**, **Prediction_Table2.R**, **Prediction_Table3.R**, and **Prediction_Table4.R**   <br /> 
-They reproduce Tables 1-4 in Appendix, respectively. 
-
-**Run time** of **Prediction_Table1.R**, **Prediction_Table2.R**, **Prediction_Table3.R**, and **Prediction_Table4.R** for any given setting described above is less than 30 min.
-
-### Folder `Code_Reproduction/simulation/Figure7_appendix/':
-
-There is one file **qqplot_figure7.R** in the folder. It reproduces the methodology to generate Figure 7 in Appendix. The implementation is to run codes in 1-160 lines to generate "sure.csv". After that, one needs to read in this "sure.csv" to plot the Q-Q-plot (corresponds to lines 164-171). 
-
-
-**Run time** of **qqplot_figure7.R** for any given setting described above is around 5 hrs.
