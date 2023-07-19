@@ -1,7 +1,3 @@
----
----
----
-
 # Reproduction for the methodology of "Ranking Inferences Based on the Top Choice of Multi-way Comparisons"
 
 # 1. **Real Data Analysis**
